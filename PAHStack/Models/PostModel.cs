@@ -10,7 +10,7 @@ namespace PAHStack.Models
         public int Id { get; set; }
         public string Title { get; set; }
         public string Body { get; set; }
-        public DateTime DatePosted { get; set; }
+        public DateTime DatePosted { get; set; } = DateTime.Now;
         public string Img { get; set; }
         public bool Starred { get; set; }
 
