@@ -1,4 +1,6 @@
-﻿using System;
+﻿using Microsoft.AspNet.Identity;
+using PAHStack.Models;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
@@ -8,9 +10,17 @@ namespace PAHStack.Controllers
 {
     public class HomeController : Controller
     {
+
         public ActionResult Index()
         {
-            return View();
+            ViewBag.Title = "What's Hot";
+            var db = new ApplicationDbContext();
+            var posts = db.Posts.ToList();
+            if (User.Identity.IsAuthenticated)
+            {
+                ViewBag.UserId = User.Identity.GetUserId();
+            }
+            return View(posts);
         }
 
         public ActionResult About()
