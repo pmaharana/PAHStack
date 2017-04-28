@@ -1,4 +1,4 @@
-﻿/*.navbar {
+﻿.navbar {
     background-color: #fafafb;
     border-top: 3px solid #F48024;
     box-shadow: 0 1px 0 rgba(12,13,14,0.15);
@@ -21,10 +21,10 @@
     color: #242729;
     font-size: large;
     font-family: Arial,"Helvetica Neue",Helvetica,sans-serif;
-}*/
+}
 
 body {
-    /*padding-top: 100px;*/
+    padding-top: 100px;
     padding-bottom: 20px;
 }
 
