@@ -197,6 +197,7 @@
     <Compile Include="App_Start\Startup.Auth.cs" />
     <Compile Include="App_Start\WebApiConfig.cs" />
     <Compile Include="Controllers\AccountController.cs" />
+    <Compile Include="Controllers\AnswerController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\ManageController.cs" />
     <Compile Include="Controllers\PostController.cs" />
@@ -214,6 +215,26 @@
     <Compile Include="Migrations\201704271949048_tablespart2.cs" />
     <Compile Include="Migrations\201704271949048_tablespart2.Designer.cs">
       <DependentUpon>201704271949048_tablespart2.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201704281355509_UpdatedAnswer.cs" />
+    <Compile Include="Migrations\201704281355509_UpdatedAnswer.Designer.cs">
+      <DependentUpon>201704281355509_UpdatedAnswer.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201704281633463_ChangestoPostandAnswer.cs" />
+    <Compile Include="Migrations\201704281633463_ChangestoPostandAnswer.Designer.cs">
+      <DependentUpon>201704281633463_ChangestoPostandAnswer.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201704281646444_ChangestoPostandAnswer2.cs" />
+    <Compile Include="Migrations\201704281646444_ChangestoPostandAnswer2.Designer.cs">
+      <DependentUpon>201704281646444_ChangestoPostandAnswer2.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201704281818280_RemovingFKConstraints.cs" />
+    <Compile Include="Migrations\201704281818280_RemovingFKConstraints.Designer.cs">
+      <DependentUpon>201704281818280_RemovingFKConstraints.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201704281821030_RemovingFKback.cs" />
+    <Compile Include="Migrations\201704281821030_RemovingFKback.Designer.cs">
+      <DependentUpon>201704281821030_RemovingFKback.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
@@ -327,6 +348,11 @@
     <Content Include="Views\AnswerVoteModels\Details.cshtml" />
     <Content Include="Views\AnswerVoteModels\Edit.cshtml" />
     <Content Include="Views\AnswerVoteModels\Index.cshtml" />
+    <Content Include="Views\Answer\Create.cshtml" />
+    <Content Include="Views\Answer\Delete.cshtml" />
+    <Content Include="Views\Answer\Details.cshtml" />
+    <Content Include="Views\Answer\Edit.cshtml" />
+    <Content Include="Views\Answer\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
@@ -349,6 +375,21 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201704271949048_tablespart2.resx">
       <DependentUpon>201704271949048_tablespart2.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201704281355509_UpdatedAnswer.resx">
+      <DependentUpon>201704281355509_UpdatedAnswer.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201704281633463_ChangestoPostandAnswer.resx">
+      <DependentUpon>201704281633463_ChangestoPostandAnswer.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201704281646444_ChangestoPostandAnswer2.resx">
+      <DependentUpon>201704281646444_ChangestoPostandAnswer2.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201704281818280_RemovingFKConstraints.resx">
+      <DependentUpon>201704281818280_RemovingFKConstraints.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201704281821030_RemovingFKback.resx">
+      <DependentUpon>201704281821030_RemovingFKback.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>
