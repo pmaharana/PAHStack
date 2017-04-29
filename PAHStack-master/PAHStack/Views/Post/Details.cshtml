@@ -4,7 +4,7 @@
     ViewBag.Title = "Details";
 }
 
-@*Title(Question) at Top of Each Details(Question) Page*@
+@*Title at Top of Each Question Page*@
 <div>
     <h2>
         @Html.DisplayFor(model => model.Title)
@@ -58,12 +58,21 @@
 
 <hr />
 
+    </dl>
+</div>
+
+<p></p>
+
 <br /> 
 <br /> 
 <br />
 <br />  
 
+
 <p>
-    @Html.ActionLink("Edit", "Edit", new { id = Model.Id }) |
+    
+   
+    @Html.ActionLink("Test making a comment", "Create", "Answer", new { id = Model.Id }, new { @class = "btn btn-primary btn-sm &raquo" }) | 
+   
     @Html.ActionLink("Back to List", "Index")
 </p>

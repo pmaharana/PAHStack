@@ -2,34 +2,15 @@
     background-color: #fafafb;
     border-top: 3px solid #F48024;
     box-shadow: 0 1px 0 rgba(12,13,14,0.15);
-    padding-left: 225px;
-    padding-right: 225px;
-    padding-bottom: 10px;
 }
 
 .navbar .navbar-fixed-top {
     background-color: #fafafb, rgb(250,250,251);
 }
 
-.home-page-banner {
-    max-width: none;
-    -bottom: -20px;
-}
-
-.container .body-content {
-    margin-left: 225px;
-    margin-right: 0;
-}
-
 .container {
     padding-top: 10px;
     padding-bottom: 10px
-}
-
-.list-group-item {
-    border-top: none;
-    border-left: none;
-    border-right: none;
 }
 
 .navbar-collapse {
@@ -42,16 +23,11 @@
     font-family: Arial,"Helvetica Neue",Helvetica,sans-serif;
 }
 
-.home-page-body {
-    max-width: 1000px;
-}
-
 .commentText {
     font-size: 18px;
 }
 
 body {
-
     padding-top: 100px;
     padding-bottom: 20px;
 }
