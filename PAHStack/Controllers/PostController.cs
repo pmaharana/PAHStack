@@ -35,7 +35,8 @@ namespace PAHStack.Controllers
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            PostModel post = db.Posts.Find(Id);
+            //PostModel post = db.Posts.Find(Id);
+            PostModel post = db.Posts.Include(i => i.User).Where(w => w.Id == Id).First();
             if (post == null)
             {
                 return HttpNotFound();
@@ -59,7 +60,7 @@ namespace PAHStack.Controllers
                 post.UserId = HttpContext.User.Identity.GetUserId();
                 db.Posts.Add(post);
                 db.SaveChanges();
-                return RedirectToAction("Index");
+                return RedirectToAction("Index", "Home");
             }
             return View(post);
         }
