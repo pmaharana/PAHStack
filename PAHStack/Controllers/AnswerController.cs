@@ -36,10 +36,15 @@ namespace PAHStack.Controllers
         }
 
         // GET: Answer/Create
-        public ActionResult Create()
+        public ActionResult Create(int? id)
         {
+            ViewBag.PostId = id;
             return View();
         }
+                        
+         
+
+        
 
         // POST: Answer/Create
         // To protect from overposting attacks, please enable the specific properties you want to bind to, for 
@@ -48,6 +53,7 @@ namespace PAHStack.Controllers
         [ValidateAntiForgeryToken]
         public ActionResult Create([Bind(Include = "Id,Body,ApprovedAnswer,DateAnswered,UserId,PostId")] AnswerModel answerModel)
         {
+            
             if (ModelState.IsValid)
             {
                 db.Answers.Add(answerModel);
