@@ -204,37 +204,9 @@
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
-    <Compile Include="Migrations\201704271756375_First.cs" />
-    <Compile Include="Migrations\201704271756375_First.Designer.cs">
-      <DependentUpon>201704271756375_First.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201704271936234_TablesFKandPK.cs" />
-    <Compile Include="Migrations\201704271936234_TablesFKandPK.Designer.cs">
-      <DependentUpon>201704271936234_TablesFKandPK.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201704271949048_tablespart2.cs" />
-    <Compile Include="Migrations\201704271949048_tablespart2.Designer.cs">
-      <DependentUpon>201704271949048_tablespart2.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201704281355509_UpdatedAnswer.cs" />
-    <Compile Include="Migrations\201704281355509_UpdatedAnswer.Designer.cs">
-      <DependentUpon>201704281355509_UpdatedAnswer.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201704281633463_ChangestoPostandAnswer.cs" />
-    <Compile Include="Migrations\201704281633463_ChangestoPostandAnswer.Designer.cs">
-      <DependentUpon>201704281633463_ChangestoPostandAnswer.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201704281646444_ChangestoPostandAnswer2.cs" />
-    <Compile Include="Migrations\201704281646444_ChangestoPostandAnswer2.Designer.cs">
-      <DependentUpon>201704281646444_ChangestoPostandAnswer2.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201704281818280_RemovingFKConstraints.cs" />
-    <Compile Include="Migrations\201704281818280_RemovingFKConstraints.Designer.cs">
-      <DependentUpon>201704281818280_RemovingFKConstraints.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201704281821030_RemovingFKback.cs" />
-    <Compile Include="Migrations\201704281821030_RemovingFKback.Designer.cs">
-      <DependentUpon>201704281821030_RemovingFKback.cs</DependentUpon>
+    <Compile Include="Migrations\201704281845183_Mergedwithmaster1.cs" />
+    <Compile Include="Migrations\201704281845183_Mergedwithmaster1.Designer.cs">
+      <DependentUpon>201704281845183_Mergedwithmaster1.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
@@ -359,29 +331,8 @@
     <Content Include="Scripts\jquery-3.1.1.min.map" />
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="Migrations\201704271756375_First.resx">
-      <DependentUpon>201704271756375_First.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201704271936234_TablesFKandPK.resx">
-      <DependentUpon>201704271936234_TablesFKandPK.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201704271949048_tablespart2.resx">
-      <DependentUpon>201704271949048_tablespart2.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201704281355509_UpdatedAnswer.resx">
-      <DependentUpon>201704281355509_UpdatedAnswer.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201704281633463_ChangestoPostandAnswer.resx">
-      <DependentUpon>201704281633463_ChangestoPostandAnswer.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201704281646444_ChangestoPostandAnswer2.resx">
-      <DependentUpon>201704281646444_ChangestoPostandAnswer2.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201704281818280_RemovingFKConstraints.resx">
-      <DependentUpon>201704281818280_RemovingFKConstraints.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201704281821030_RemovingFKback.resx">
-      <DependentUpon>201704281821030_RemovingFKback.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\201704281845183_Mergedwithmaster1.resx">
+      <DependentUpon>201704281845183_Mergedwithmaster1.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>
