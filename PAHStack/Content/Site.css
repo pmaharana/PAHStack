@@ -23,6 +23,10 @@
     font-family: Arial,"Helvetica Neue",Helvetica,sans-serif;
 }
 
+.commentText {
+    font-size: 18px;
+}
+
 body {
     padding-top: 100px;
     padding-bottom: 20px;
