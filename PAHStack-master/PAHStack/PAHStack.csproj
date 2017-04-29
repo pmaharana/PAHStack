@@ -204,9 +204,6 @@
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
-    <Compile Include="Migrations\201704291544563_aftercommit.cs" />
-    <Compile Include="Migrations\201704291544563_aftercommit.Designer.cs">
-      <DependentUpon>201704291544563_aftercommit.cs</DependentUpon>
 
     <Compile Include="Migrations\201704281847335_Postmerge.cs" />
     <Compile Include="Migrations\201704281847335_Postmerge.Designer.cs">
@@ -337,8 +334,8 @@
   </ItemGroup>
 
   <ItemGroup>
-    <EmbeddedResource Include="Migrations\201704291544563_aftercommit.resx">
-      <DependentUpon>201704291544563_aftercommit.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\201704281847335_Postmerge.resx">
+      <DependentUpon>201704281847335_Postmerge.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
 
