@@ -37,8 +37,6 @@ namespace PAHStack.Controllers
             }
 
             PostModel post = db.Posts.Include(i => i.User).Where(w => w.Id == Id).First();
-            post.ViewCount = post.ViewCount + 1;
-            db.SaveChanges();
             if (post == null)
             {
                 return HttpNotFound();
