@@ -7,13 +7,13 @@ namespace PAHStack.Migrations
     using System.Resources;
     
     [GeneratedCode("EntityFramework.Migrations", "6.1.3-40302")]
-    public sealed partial class Postmerge : IMigrationMetadata
+    public sealed partial class Redownloaded : IMigrationMetadata
     {
-        private readonly ResourceManager Resources = new ResourceManager(typeof(Postmerge));
+        private readonly ResourceManager Resources = new ResourceManager(typeof(Redownloaded));
         
         string IMigrationMetadata.Id
         {
-            get { return "201704281847335_Postmerge"; }
+            get { return "201704290222128_Re-downloaded"; }
         }
         
         string IMigrationMetadata.Source

@@ -1,4 +1,6 @@
 ﻿@model PAHStack.Models.PostModel
+@using Microsoft.AspNet.Identity
+@using PAHStack.Models
 
 @{
     ViewBag.Title = "Details";
@@ -51,28 +53,28 @@
     </div>
     <div class="col-xs-5">
         <span>@Html.DisplayFor(model => model.DatePosted)</span>
-        @*TODO: The model.User.UserName is not displaying*@
+        
         <span>Posted by @Html.DisplayFor(model => model.User.UserName)</span>
+
+        
     </div>
 </div>
+<div>
 
-<hr />
+   {@ApplicationDbContext db = new ApplicationDbContext();}
 
-    </dl>
+
 </div>
 
-<p></p>
 
-<br /> 
-<br /> 
-<br />
-<br />  
+
+
 
 
 <p>
     
    
-    @Html.ActionLink("Test making a comment", "Create", "Answer", new { id = Model.Id }, new { @class = "btn btn-primary btn-sm &raquo" }) | 
+    @Html.ActionLink("Answer the question", "Create", "Answer", new { id = Model.Id }, new { @class = "btn btn-primary btn-sm &raquo" }) | 
    
     @Html.ActionLink("Back to List", "Index")
 </p>
