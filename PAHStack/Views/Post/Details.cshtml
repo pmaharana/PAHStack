@@ -1,4 +1,6 @@
-﻿@model PAHStack.Models.PostModel
+﻿@model PAHStack.ViewModels.PostAndAnswerViewModel
+@using Microsoft.AspNet.Identity
+@using PAHStack.Models
 
 @{
     ViewBag.Title = "Details";
@@ -7,7 +9,7 @@
 @*Title(Question) at Top of Each Details(Question) Page*@
 <div>
     <h2>
-        @Html.DisplayFor(model => model.Title)
+        @Html.DisplayFor(model => model.Posts.Title)
     </h2>
 </div>
 
@@ -17,7 +19,7 @@
     <div class="col-xs-1">
         <dl>
             <dt>
-                @Html.DisplayNameFor(model => model.Starred)
+                @Html.DisplayNameFor(model => model.Posts.Starred)
             </dt>
 
             @*TODO: Needs to be replaced with star*@
@@ -31,17 +33,17 @@
     <div class="col-xs-11">
         <dl>
             <dd class="commentText">
-                @Html.DisplayFor(model => model.Body)
+                @Html.DisplayFor(model => model.Posts.Body)
             </dd>
 
-            @if (!String.IsNullOrEmpty(Model.Img))
+            @if (!String.IsNullOrEmpty(Model.Posts.Img))
             {
                 <dt>
-                    @Html.DisplayNameFor(model => model.Img)
+                    @Html.DisplayNameFor(model => model.Posts.Img)
                 </dt>
 
                 <dd>
-                    @Html.DisplayFor(model => model.Img)
+                    @Html.DisplayFor(model => model.Posts.Img)
                 </dd>
             }
         </dl>
@@ -50,29 +52,40 @@
         ***Placeholder for tags***
     </div>
     <div class="col-xs-5">
-        <span>@Html.DisplayFor(model => model.DatePosted)</span>
-        @*TODO: The model.User.UserName is not displaying*@
-        <span>Posted by @Html.DisplayFor(model => model.User.UserName)</span>
+        <span>@Html.DisplayFor(model => model.Posts.DatePosted)</span>
+        
+        <span>Posted by @Html.DisplayFor(model => model.Posts.User.UserName)</span>
+
+        
     </div>
 </div>
 
-<hr />
+<div>
 
-    </dl>
+    @foreach (var item in Model.AnswerCollection)
+    {
+        <p>The answer - @item.Body</p>
+
+        DateTime result = Convert.ToDateTime(item.DateAnswered);
+        string formattedDate = result.ToShortDateString();
+
+        <p>Date answered on - @formattedDate</p>
+
+        <p>answered by @item.User.UserName</p>
+    }
+
+
 </div>
 
-<p></p>
 
-<br /> 
-<br /> 
-<br />
-<br />  
+
+
 
 
 <p>
     
    
-    @Html.ActionLink("Test making a comment", "Create", "Answer", new { id = Model.Id }, new { @class = "btn btn-primary btn-sm &raquo" }) | 
+    @Html.ActionLink("Answer the question", "Create", "Answer", new { id = Model.Posts.Id }, new { @class = "btn btn-primary btn-sm &raquo" }) | 
    
     @Html.ActionLink("Back to List", "Index")
 </p>
