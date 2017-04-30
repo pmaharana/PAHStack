@@ -30,26 +30,17 @@
                     <li>@Html.ActionLink("Tags", "Index", "Home")</li>
                     <li>@Html.ActionLink("Users", "Index", "Home")</li>
                 </ul>
-                @using (Html.BeginForm("SearchPosts", "Post", FormMethod.Post))
-                {
-                    <form>
-                        <div class="navbar-form navbar-left">
-                            <div class="input-group">
-                                <input type="submit" id="submitId" />
-                                <input type="text" name="search" id="search" placeholder="search" />
-                            </div>
-                        </div>
-                    </form>
-                }
-                @{
-                    if (ViewBag.SearchKey != null)
-                    {
-                        <span>
-                            Search Key: @ViewBag.SearchKey
-                        </span>
-                    }
-                }
 
+                    <div class="navbar-form navbar-left">
+                        <div class="input-group" id="search-form">
+                            @Html.Action("Search", "Home");
+                            <button type="submit">
+                                <i class="glyphicon-search"></i>
+                            </button>
+                        </div>
+                    </div>
+
+               
                 @Html.Partial("_LoginPartial")
             </div>
         </div>

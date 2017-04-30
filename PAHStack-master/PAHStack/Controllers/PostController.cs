@@ -123,20 +123,6 @@ namespace PAHStack.Controllers
             return RedirectToAction("Index");
         }
 
-        [HttpGet]
-        public ActionResult SearchPosts()
-        {
-            return View();
-        }
-        [HttpPost]
-        public ActionResult SearchPosts(string search)
-        {
-            //linq filter search
-            //var result = (from p in db.Posts where p.Body == search select p).ToList();
-            //ViewData.Model = result;
-            ViewBag.SearchKey = search;
-
-            return View();
-        }
+       
     }
 }
