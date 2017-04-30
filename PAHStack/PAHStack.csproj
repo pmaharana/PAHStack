@@ -204,10 +204,6 @@
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
-    <Compile Include="Migrations\201704290222128_Re-downloaded.cs" />
-    <Compile Include="Migrations\201704290222128_Re-downloaded.Designer.cs">
-      <DependentUpon>201704290222128_Re-downloaded.cs</DependentUpon>
-    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
     <Compile Include="Models\AnswerModel.cs" />
@@ -330,11 +326,6 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="Scripts\jquery-3.1.1.min.map" />
-  </ItemGroup>
-  <ItemGroup>
-    <EmbeddedResource Include="Migrations\201704290222128_Re-downloaded.resx">
-      <DependentUpon>201704290222128_Re-downloaded.cs</DependentUpon>
-    </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>

@@ -59,7 +59,7 @@ namespace PAHStack.Controllers
             {
                 db.Answers.Add(answerModel);
                 db.SaveChanges();
-                int detailInt = (int)TempData["PostId"];
+                int detailInt = (int)TempData["PostId"]; 
                 return RedirectToAction("Details", "Post", new { Id = detailInt });
             }
 
