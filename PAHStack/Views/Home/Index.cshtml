@@ -5,43 +5,57 @@
 }
 
 <br />
+<div class="home-page-banner">
+    <div class="col-sm-12">
+        <h3>Top Questions</h3>
+        <div class="col-sm-9"></div>
+        <div class="col-sm-pull-3">
+            @if (HttpContext.Current.User.Identity.IsAuthenticated)
+            {
+                <button type="button" class="btn btn-lg btn-primary waves-effect" onclick="location.href='@Url.Action("Create", "Post")';return false;">Ask Question</button>
+            }
+        </div>
+    </div>
+</div>
 
-@if (HttpContext.Current.User.Identity.IsAuthenticated)
-{
-    <button type="button" class="btn btn-lg btn-primary waves-effect" onclick="location.href='@Url.Action("Create", "Post")';return false;">Ask Question</button>
-}
+<br><br />
 
-<br />
-<br />
+<div class="home-page-body">
+        <ul class="nav nav-tabs">
+            <li role="presentation" class="active"><a href="#">Interesting</a></li>
+            <li role="presentation"><a href="#">Week</a></li>
+            <li role="presentation"><a href="#">Month</a></li>
+        </ul>
+    @foreach (var item in Model)
+    {
+        <ul class="list-group">
+            <li class="list-group-item">
+                <div class="container">
+                    <div class="row">
 
-@foreach (var item in Model)
-{
-    <ul class="list-group">
-        <li class="list-group-item">
-            <div class="container">
-                <div class="row">
+                        <div class="col-xs-1" id="counterbox">
+                            <div id="numofvotes">0</div>
+                            <div>votes</div>
+                        </div>
+                        <div class="col-xs-1" id="counterbox">
+                            <div id="numofvotes">0</div>
+                            <div>answers</div>
+                        </div>
+                        <div class="col-xs-1" id="counterbox">
+                            <div id="numofvotes">0</div>
+                            <div>views</div>
+                        </div>
 
-                    <div class="col-xs-1" id="counterbox">
-                        <div id="numofvotes">0</div> 
-                        <div>votes</div>
-                    </div>
-                    <div class="col-xs-1" id="counterbox">
-                        <div id="numofvotes">0</div>
-                        <div>answers</div>
-                    </div>
-                    <div class="col-xs-1" id="counterbox">
-                        <div id="numofvotes">0</div>
-                        <div>views</div>
-                    </div>
-
-                    <div class="col-xs-9">
-                        <div>
-                            <h3><a href="~/Post/Details/@item.Id">@item.Title</a></h3>
-                            Asked @item.DatePosted.ToShortDateString() ago by @item.User.UserName
-                        </div> 
+                        <div class="col-xs-9">
+                            <div>
+                                <h3><a href="~/Post/Details/@item.Id">@item.Title</a></h3>
+                                Asked @item.DatePosted.ToShortDateString() ago by @item.User.UserName
+                            </div>
+                        </div>
                     </div>
                 </div>
-            </div>
-        </li>
-    </ul>
-}
+            </li>
+        </ul>
+    }
+</div>
+   
