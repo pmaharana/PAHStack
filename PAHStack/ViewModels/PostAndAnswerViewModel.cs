@@ -10,5 +10,11 @@ namespace PAHStack.ViewModels
     {
         public PostModel Posts { get; set; }
         public ICollection<AnswerModel> AnswerCollection { get; set; }
+
+        public PostAndAnswerViewModel(PostModel post, ICollection<AnswerModel> answers)
+        {
+            this.Posts = post;
+            this.AnswerCollection = answers;
+        }
     }
 }
