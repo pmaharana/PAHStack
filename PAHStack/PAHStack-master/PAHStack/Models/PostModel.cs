@@ -13,7 +13,6 @@ namespace PAHStack.Models
         public DateTime DatePosted { get; set; } = DateTime.Now;
         public string Img { get; set; }
         public bool Starred { get; set; }
-        public int ViewCount { get; set; } = 0;
 
         public string UserId { get; set; }
         public ApplicationUser User { get; set; }
