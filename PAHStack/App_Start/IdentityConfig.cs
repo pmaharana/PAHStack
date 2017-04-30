@@ -53,7 +53,10 @@ namespace PAHStack
             // Configure validation logic for passwords
             manager.PasswordValidator = new PasswordValidator
             {
-                RequiredLength = 5,
+
+                RequiredLength = 2,
+
+
                 RequireNonLetterOrDigit = false,
                 RequireDigit = false,
                 RequireLowercase = false,

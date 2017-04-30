@@ -35,7 +35,7 @@ namespace PAHStack.Controllers
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            //PostModel post = db.Posts.Find(Id);
+
             PostModel post = db.Posts.Include(i => i.User).Where(w => w.Id == Id).First();
             if (post == null)
             {
@@ -45,8 +45,9 @@ namespace PAHStack.Controllers
         }
 
         // GET: Post/Create
-        public ActionResult Create()
+        public ActionResult Create(int? id)
         {
+
             return View();
         }
 
