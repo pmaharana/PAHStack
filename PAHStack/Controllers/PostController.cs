@@ -7,6 +7,7 @@ using PAHStack.Models;
 using Microsoft.AspNet.Identity;
 using System.Net;
 using System.Data.Entity;
+using PAHStack.ViewModels;
 
 namespace PAHStack.Controllers
 {
@@ -35,18 +36,22 @@ namespace PAHStack.Controllers
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            //PostModel post = db.Posts.Find(Id);
+
             PostModel post = db.Posts.Include(i => i.User).Where(w => w.Id == Id).First();
+            var answers = db.Answers.Include(i => i.User).Where(w => w.PostId == Id).ToList();
+            var vm = new PostAndAnswerViewModel(post, answers);
+
             if (post == null)
             {
                 return HttpNotFound();
             }
-            return View(post);
+            return View(vm);
         }
 
         // GET: Post/Create
-        public ActionResult Create()
+        public ActionResult Create(int? id)
         {
+
             return View();
         }
 

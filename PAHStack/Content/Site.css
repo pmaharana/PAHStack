@@ -13,7 +13,7 @@
 
 .home-page-banner {
     max-width: none;
-    bottom: -20px;
+    -bottom: -20px;
 }
 
 .container .body-content {
@@ -30,10 +30,6 @@
     border-top: none;
     border-left: none;
     border-right: none;
-}
-
-#body-text-block {
-    height: 200px;
 }
 
 .navbar-collapse {
@@ -53,25 +49,6 @@
 .commentText {
     font-size: 18px;
 }
-
-/*Formatting for star radio button*/
-.star {
-    visibility: hidden;
-    font-size: 40px;
-    cursor: pointer;
-    color: dimgray;
-}
-
-    .star:before {
-        content: "\2605";
-        position: absolute;
-        visibility: visible;
-    }
-
-    .star:checked:before {
-        content: "\2606";
-        position: absolute;
-    }
 
 body {
 
