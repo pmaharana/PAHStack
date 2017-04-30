@@ -39,6 +39,7 @@ namespace PAHStack.Controllers
         public ActionResult Create(int? id)
         {
             ViewBag.PostId = id;
+            TempData["PostId"] = id;
             return View();
         }
                         
@@ -58,7 +59,8 @@ namespace PAHStack.Controllers
             {
                 db.Answers.Add(answerModel);
                 db.SaveChanges();
-                return RedirectToAction("Index");
+                int detailInt = (int)TempData["PostId"];
+                return RedirectToAction("Details", "Post", new { Id = detailInt });
             }
 
             return View(answerModel);
