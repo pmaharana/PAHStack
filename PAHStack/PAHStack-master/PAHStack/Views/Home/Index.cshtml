@@ -1,0 +1,47 @@
+﻿@model IEnumerable<PAHStack.Models.PostModel>
+
+@{
+    ViewBag.Title = "Home Page";
+}
+
+<br />
+
+@if (HttpContext.Current.User.Identity.IsAuthenticated)
+{
+    <button type="button" class="btn btn-lg btn-primary waves-effect" onclick="location.href='@Url.Action("Create", "Post")';return false;">Ask Question</button>
+}
+
+<br />
+<br />
+
+@foreach (var item in Model)
+{
+    <ul class="list-group">
+        <li class="list-group-item">
+            <div class="container">
+                <div class="row">
+
+                    <div class="col-xs-1" id="counterbox">
+                        <div id="numofvotes">0</div> 
+                        <div>votes</div>
+                    </div>
+                    <div class="col-xs-1" id="counterbox">
+                        <div id="numofvotes">0</div>
+                        <div>answers</div>
+                    </div>
+                    <div class="col-xs-1" id="counterbox">
+                        <div id="numofvotes">0</div>
+                        <div>views</div>
+                    </div>
+
+                    <div class="col-xs-9">
+                        <div>
+                            <h3><a href="~/Post/Details/@item.Id">@item.Title</a></h3>
+                            Asked @item.DatePosted.ToShortDateString() ago by @item.User.UserName
+                        </div> 
+                    </div>
+                </div>
+            </div>
+        </li>
+    </ul>
+}
