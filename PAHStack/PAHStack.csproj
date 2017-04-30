@@ -205,6 +205,12 @@
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
 
+    <Compile Include="Migrations\201704301744565_reverted.cs" />
+    <Compile Include="Migrations\201704301744565_reverted.Designer.cs">
+      <DependentUpon>201704301744565_reverted.cs</DependentUpon>
+    </Compile>
+
+
     <Compile Include="Migrations\201704291544563_aftercommit.cs" />
     <Compile Include="Migrations\201704291544563_aftercommit.Designer.cs">
       <DependentUpon>201704291544563_aftercommit.cs</DependentUpon>
@@ -213,6 +219,7 @@
     <Compile Include="Migrations\201704281847335_Postmerge.Designer.cs">
       <DependentUpon>201704281847335_Postmerge.cs</DependentUpon>
     </Compile>
+
 
 
     <Compile Include="Migrations\Configuration.cs" />
@@ -339,6 +346,13 @@
     <Content Include="Scripts\jquery-3.1.1.min.map" />
   </ItemGroup>
 
+  <ItemGroup>
+    <EmbeddedResource Include="Migrations\201704301744565_reverted.resx">
+      <DependentUpon>201704301744565_reverted.cs</DependentUpon>
+    </EmbeddedResource>
+  </ItemGroup>
+
+
 
 
   <ItemGroup>
@@ -346,6 +360,7 @@
       <DependentUpon>201704291544563_aftercommit.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
+
 
 
   <PropertyGroup>
