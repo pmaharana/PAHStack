@@ -1,11 +1,19 @@
-﻿@*@model PAHStack.Models.PostVoteModel
+﻿@model PAHStack.Models.PostModel
 
-<button class="btn-link" onclick="upVote(@Model.Id)">
-    <i class="glyphicon glyphicon-arrow-up" value="content"></i>
+<button class="btn-link" onclick="upVote(@Model.Id);">
+    <i class="glyphicon glyphicon-arrow-up" id="sweetarrowbuttons"></i>
 </button>
 
-<span>#@(Model.UpVotes - Model.DownVotes)</span>
+@if (Model.Votes == null)
+{
+    <p id="votenumber">0</p>
+}
+else
+{
+    <span id="votenumber">@Model.Votes.Sum(i => i.PostVoteValue)</span>
 
-<button class="btn-link" onclick="downVote(@Model.Id)">
-    <i class="glyphicon glyphicon-arrow-down"></i>
-</button>*@
+}
+
+<button class="btn-link" onclick="downVote(@Model.Id);">
+    <i class="glyphicon glyphicon-arrow-down" id="sweetarrowbuttons"></i>
+</button>

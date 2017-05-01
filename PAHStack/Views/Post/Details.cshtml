@@ -1,4 +1,5 @@
 ﻿@model PAHStack.Models.PostModel
+    @using PAHStack.ViewModel;
  
 
 @{
@@ -14,17 +15,19 @@
 
 <hr />
 
-<div class="col-xs-12">
-    <div class="col-xs-1">
-      @*@*<div id="voteContainer-@Model.Id">
+<div class="col-xs-12" id="commentbox">
+    <div class="col-xs-1 text-center" id="stararrowbox"> @*Vote Buttons*@
+      <div id="voteContainer-@Model.Id">
           <div id="voteContainer">
-              @Html.Partial("_PartialVoteDisplay", new VoteButtonContainer { Post = post, VoteValue = 0 })
-          </div>*@
+              @Html.Partial("_PartialVoteDisplay", Model)
+          </div>
+      </div>
 
-        <div class="stars">
-            <input class="star" type="checkbox" title="bookmark page" checked><br /><br />
+        <div class="stars">@*Favorite Star*@
+            <input class="star" type="checkbox" title="favorite" checked><br />
         </div>
     </div>
+        
 
     <div class="col-xs-11">
         <dl>
@@ -37,14 +40,21 @@
                 <dt>
                     @Html.DisplayNameFor(model => model.Img)
                 </dt>
-
                 <dd>
                     @Html.DisplayFor(model => model.Img)
                 </dd>
             }
         </dl>
     </div>
-    <div class="col-xs-5">
+</div>
+
+    <hr />
+    <br />
+    <br />
+
+<div class="col-sm-12" id="commentfooter">
+    <div class="col-sm-1"></div>
+    <div class="col-xs-6">
         ***Placeholder for tags***
     </div>
     <div class="col-xs-5">
@@ -53,12 +63,9 @@
     </div>
 </div>
 
-<hr />
-
-<br /> 
-<br /> 
-<br />
-<br />  
+    <hr />
+    <br /> 
+    <br />  
 
 <p>
     @Html.ActionLink("Edit", "Edit", new { id = Model.Id }) |

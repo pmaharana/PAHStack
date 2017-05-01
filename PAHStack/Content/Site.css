@@ -50,9 +50,30 @@
     max-width: 1000px;
 }
 
+#commentbox {
+    padding: 10px, 10px, 10px, 10px;
+    font-size: 18px;
+    margin-bottom: 25px;
+}
+
+#commentfooter {
+    margin-top: 25px;
+    margin-bottom: 25px;
+}
+
 .commentText {
     font-size: 18px;
 }
+
+#sweetarrowbuttons {
+    color: darkgray;
+    font-size: 40px;
+}
+
+#votenumber {
+    font-size: 30px;
+}
+
 
 /*Formatting for star radio button*/
 .star {

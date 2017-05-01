@@ -1,27 +1,31 @@
 ﻿let upVote = (postId) => {
     let _data = {
-        id: postId
+        id: postId,
     };
 
     $.ajax({
-        url: "/home/countup",
+        url: "/vote/up",
         data: JSON.stringify(_data),
         contentType: "application/json",
         type: "POST",
         dataType: "html",
         success: (newHtml) => {
             $("#voteContainer-" + postId).html(newHtml);
+        },
+        error: (jqXHR, textStatus, errorThrown) => {
+
         }
     })
 };
+
 
 let downVote = (postId) => {
     let _data = {
-        id: postId
+        id: postId,
     };
 
     $.ajax({
-        url: "/home/countdown",
+        url: "/vote/down",
         data: JSON.stringify(_data),
         contentType: "application/json",
         type: "POST",
@@ -31,3 +35,4 @@ let downVote = (postId) => {
         }
     })
 };
+
