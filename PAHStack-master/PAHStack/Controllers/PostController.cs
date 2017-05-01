@@ -121,8 +121,8 @@ namespace PAHStack.Controllers
             db.Posts.Remove(posts);
             db.SaveChanges();
             return RedirectToAction("Index");
-
-            
         }
+
+       
     }
 }

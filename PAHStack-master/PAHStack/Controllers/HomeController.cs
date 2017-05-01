@@ -20,7 +20,7 @@ namespace PAHStack.Controllers
 
             //// get a users posts via the post table
             //var usersPosts = db.Posts.Where(w => w.UserId == User.Identity.GetUserId());
-            
+
             //// get all posts for a user by querying the user
             //var user = db.Users.First(f => User.Identity.GetUserId() == f.Id);
             //var userPosts = user.Posts;
@@ -32,18 +32,17 @@ namespace PAHStack.Controllers
             return View(posts);
         }
 
-        public ActionResult About()
+        public ActionResult Search()
         {
-            ViewBag.Message = "Your application description page.";
-
-            return View();
+            return PartialView("_SearchFormPartial");
         }
 
-        public ActionResult Contact()
+        [HttpPost]
+        public ActionResult Search(string keyword)
         {
-            ViewBag.Message = "Your contact page.";
-
-            return View();
+            ApplicationDbContext db = new ApplicationDbContext();
+            var models = db.Posts.Where(w => w.Body.Contains(keyword)).ToList();
+            return PartialView("_SearchResultsPartial", models);
         }
     }
 }

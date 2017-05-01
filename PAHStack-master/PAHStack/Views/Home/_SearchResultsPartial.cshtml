@@ -1,23 +1,6 @@
 ﻿@model IEnumerable<PAHStack.Models.PostModel>
 
-@{
-    ViewBag.Title = "Home Page";
-}
-
-<br />
-
-@if (HttpContext.Current.User.Identity.IsAuthenticated)
-{
-    <button type="button" class="btn btn-lg btn-primary waves-effect" onclick="location.href='@Url.Action("Create", "Post")';return false;">Ask Question</button>
-}
-
-<br />
-<br />
-
-<div id="search-results">
-</div>
-
-@foreach (var item in Model)
+@foreach (var result in Model)
 {
     <ul class="list-group">
         <li class="list-group-item">
@@ -33,14 +16,14 @@
                         <div>answers</div>
                     </div>
                     <div class="col-xs-1" id="counterbox">
-                        <div id="numOfViews">@item.ViewCount</div>
+                        <div id="numOfViews">@result.ViewCount</div>
                         <div>views</div>
                     </div>
 
                     <div class="col-xs-9">
                         <div>
-                            <h3><a href="~/Post/Details/@item.Id">@item.Title</a></h3>
-                            Asked @item.DatePosted.ToShortDateString() ago by @item.User.UserName
+                            <h3><a href="~/Post/Details/@result.Id">@result.Title</a></h3>
+                            Asked @result.DatePosted.ToShortDateString() ago by @result.User.UserName
                         </div>
                     </div>
                 </div>
@@ -48,3 +31,4 @@
         </li>
     </ul>
 }
+
