@@ -1,7 +1,126 @@
-﻿@{
+﻿@model PAHStack.ViewModels.AdminViewModel
+@using PAHStack.Models
+
+@{ ApplicationDbContext db = new ApplicationDbContext();
+    PostModel Post = new PostModel();
+     AnswerModel Answer = new AnswerModel();
+    ApplicationUser Uzer = new ApplicationUser();
+
+
+    }
+
+    
+    
+    
+
+    
+
+@{
     ViewBag.Title = "About";
 }
-<h2>@ViewBag.Title.</h2>
-<h3>@ViewBag.Message</h3>
 
-<p>Use this area to provide additional information.</p>
+
+
+<div class="container">
+    <div class="row">
+        <div class="col-md-3">
+            <div class="panel-group" id="accordion" role="tablist" aria-multiselectable="true">
+                <div class="panel panel-default">
+                    <div class="panel-heading" role="tab" id="headingOne">
+                        <h4 class="panel-title">
+                            <a data-toggle="collapse" data-parent="#accordion" href="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+                                <b>Number of unanswered questions</b>
+                            </a>
+                        </h4>
+                    </div>
+                    <div id="collapseOne" class="panel-collapse collapse in" role="tabpanel" aria-labelledby="headingOne">
+                        <div class="panel-body">
+                        
+                            @*wow you think ur so cool marky mark? well here's my awesome linq statemnt*@
+
+                        @{ 
+                            HashSet<int> testId = new HashSet<int>(Model.ListOfAnswers.Select(s => s.PostId));
+                            var result = Model.ListOfPosts.Where(w => !testId.Contains(w.Id));
+                            var newCount = result.Count();
+
+                        }
+
+                        <h2>@newCount</h2> 
+                        </div>
+                    </div>
+                </div>
+                <div class="panel panel-default">
+                    <div class="panel-heading" role="tab" id="headingTwo">
+                        <h4 class="panel-title">
+                            <a class="collapsed" data-toggle="collapse" data-parent="#accordion" href="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+                                <b>Number of total questions</b>
+                            </a>
+                        </h4>
+                    </div>
+                    <div id="collapseTwo" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingTwo">
+                        <div class="panel-body">
+                            
+
+                            @{ 
+                                var questionCount = db.Posts.ToList().Count();
+                            }
+
+                            <h1>@questionCount</h1>
+                        </div>
+                    </div>
+                </div>
+                <div class="panel panel-default">
+                    <div class="panel-heading" role="tab" id="headingThree">
+                        <h4 class="panel-title">
+                            <a class="collapsed" data-toggle="collapse" data-parent="#accordion" href="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
+                                <b>    Number of questions per user     </b>
+                            </a>
+                        </h4>
+                    </div>
+                    <div id="collapseThree" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingThree">
+                        <div class="panel-body">
+
+                            @foreach (var item in Model.ListOfUsers)
+                            {
+                                
+                                var theUser = db.Posts.Where(w => w.UserId == item.Id).Count();
+
+                                <p>@item.UserName has @theUser questions</p>
+                            }
+
+                              
+
+                                
+
+
+
+                            
+                        </div>
+                    </div>
+                </div>
+                <div class="panel panel-default">
+                    <div class="panel-heading" role="tab" id="headingFour">
+                        <h4 class="panel-title">
+                            <a class="collapsed" data-toggle="collapse" data-parent="#accordion" href="#collapseFour" aria-expanded="false" aria-controls="collapseFour">
+                                <b>Number of answers per user </b>
+                            </a>
+                        </h4>
+                    </div>
+                    <div id="collapseFour" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingFour">
+                        <div class="panel-body">
+
+                            @foreach (var item in Model.ListOfUsers)
+                            {
+
+                                var theUser = db.Answers.Where(w => w.UserId == item.Id).Count();
+
+                                <p>@item.UserName has @theUser answers</p>
+                            }
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

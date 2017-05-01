@@ -27,7 +27,11 @@
                         <li>@Html.ActionLink("Questions", "Index", "PostModel")</li>
                         <li>@Html.ActionLink("Jobs", "Index", "Home")</li>
                         <li>@Html.ActionLink("Documentation", "Index", "Home")</li>
-                        <li>@Html.ActionLink("Tags", "Index", "Home")</li>
+                        @if (User.IsInRole("admin"))
+                        {
+
+                        <li>@Html.ActionLink("Admin Site ", "About", "Home")</li>
+                        }
                         <li>@Html.ActionLink("Users", "Index", "Home")</li>
                     </ul>
                     <form class="navbar-form navbar-left">
