@@ -1,0 +1,6 @@
+﻿@model IEnumerable<PAHStack.Models.PostModel>
+
+@foreach (var item in Model)
+{
+    @Html.Partial("_SearchResultsPartial", item)
+}

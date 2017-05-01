@@ -8,7 +8,7 @@ namespace PAHStack.Models
     public class PostVoteModel
     {
         public int Id { get; set; }
-        public int PostVoteValue { get; set; }
+        public int PostVoteValue { get; set; } = 0;
 
         public string UserId { get; set; }
         public ApplicationUser User { get; set; }

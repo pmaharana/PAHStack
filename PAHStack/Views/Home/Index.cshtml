@@ -21,41 +21,12 @@
 <br><br />
 
 <div class="home-page-body">
-        <ul class="nav nav-tabs">
-            <li role="presentation" class="active"><a href="#">Interesting</a></li>
-            <li role="presentation"><a href="#">Week</a></li>
-            <li role="presentation"><a href="#">Month</a></li>
-        </ul>
-    @foreach (var item in Model)
-    {
-        <ul class="list-group">
-            <li class="list-group-item">
-                <div class="container">
-                    <div class="row">
-
-                        <div class="col-xs-1" id="counterbox">
-                            <div id="numofvotes">@item.Votes.Sum(s => s.PostVoteValue)</div>
-                            <div>votes</div>
-                        </div>
-                        <div class="col-xs-1" id="counterbox">
-                            <div id="numofanswers">@item.Answers.Count()</div>
-                            <div>answers</div>
-                        </div>
-                        <div class="col-xs-1" id="counterbox">
-                            <div id="numofviews">@item.ViewCount</div>
-                            <div>views</div>
-                        </div>
-
-                        <div class="col-xs-9">
-                            <div>
-                                <h3><a href="~/Post/Details/@item.Id">@item.Title</a></h3>
-                                Asked @item.DatePosted.ToShortDateString() ago by @item.User.UserName
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </li>
-        </ul>
-    }
+    <ul class="nav nav-tabs">
+        <li role="presentation" class="active"><a href="#">Interesting</a></li>
+        <li role="presentation"><a href="#">Week</a></li>
+        <li role="presentation"><a href="#">Month</a></li>
+    </ul>
+    <div id="results">
+        @Html.Partial("_SearchFormPartial", Model)
+    </div>
 </div>
-   
