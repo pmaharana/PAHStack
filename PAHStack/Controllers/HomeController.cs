@@ -50,12 +50,16 @@ namespace PAHStack.Controllers
         }
 
 
-
+        [Authorize]
         public ActionResult Contact()
         {
-            ViewBag.Message = "Your contact page.";
-
-            return View();
+            var db = new ApplicationDbContext();
+            var currentUser = User.Identity.GetUserId();
+            var posts = db.Posts.Where(w => w.UserId == currentUser).ToList();
+            var user = db.Users.First(f => f.Id == currentUser);
+            var answers = db.Answers.Where(w => w.UserId == currentUser).ToList();
+            var vm = new ProfileViewModel(user, posts, answers);
+            return View(vm);
         }
     }
 }
