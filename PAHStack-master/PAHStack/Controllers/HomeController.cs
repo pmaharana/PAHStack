@@ -41,8 +41,8 @@ namespace PAHStack.Controllers
         public ActionResult Search(string keyword)
         {
             ApplicationDbContext db = new ApplicationDbContext();
-            var model = db.Posts.Where(w => w.Body.Contains(keyword)).ToList();
-            return PartialView("_SearchResultsPartial", model);
+            var models = db.Posts.Where(w => w.Body.Contains(keyword)).ToList();
+            return PartialView("_SearchResultsPartial", models);
         }
     }
 }
