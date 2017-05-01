@@ -201,18 +201,18 @@
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\ManageController.cs" />
     <Compile Include="Controllers\PostController.cs" />
-    <Compile Include="Controllers\VoteController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
-    <Compile Include="Migrations\201704302146248_revertedagain.cs" />
-    <Compile Include="Migrations\201704302146248_revertedagain.Designer.cs">
-      <DependentUpon>201704302146248_revertedagain.cs</DependentUpon>
+
+
+    <Compile Include="Migrations\201704302155342_redownloaded.cs" />
+    <Compile Include="Migrations\201704302155342_redownloaded.Designer.cs">
+      <DependentUpon>201704302155342_redownloaded.cs</DependentUpon>
     </Compile>
-    <Compile Include="Migrations\201705010228447_updowndeleted.cs" />
-    <Compile Include="Migrations\201705010228447_updowndeleted.Designer.cs">
-      <DependentUpon>201705010228447_updowndeleted.cs</DependentUpon>
-    </Compile>
+
+
+
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
     <Compile Include="Models\AnswerModel.cs" />
@@ -224,7 +224,8 @@
     <Compile Include="Models\TagModel.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Startup.cs" />
-    <Compile Include="ViewModel\VoteButtonVM.cs" />
+    <Compile Include="ViewModels\AdminViewModel.cs" />
+    <Compile Include="ViewModels\PostAndAnswerViewModel.cs" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="Content\bootstrap-theme.css" />
@@ -250,7 +251,6 @@
     <Content Include="Images\logo.png" />
     <Content Include="Scripts\bootstrap.js" />
     <Content Include="Scripts\bootstrap.min.js" />
-    <Content Include="Scripts\Votes.js" />
     <Content Include="Scripts\jquery-3.1.1.js" />
     <Content Include="Scripts\jquery-3.1.1.min.js" />
     <Content Include="Scripts\jquery-3.1.1.slim.js" />
@@ -324,11 +324,9 @@
     <Content Include="Views\Answer\Details.cshtml" />
     <Content Include="Views\Answer\Edit.cshtml" />
     <Content Include="Views\Answer\Index.cshtml" />
-    <Content Include="Views\Shared\_PartialVoteDisplay.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
-    <Folder Include="Views\Vote\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="packages.config" />
@@ -339,14 +337,13 @@
   <ItemGroup>
     <Content Include="Scripts\jquery-3.1.1.min.map" />
   </ItemGroup>
+
   <ItemGroup>
-    <EmbeddedResource Include="Migrations\201704302146248_revertedagain.resx">
-      <DependentUpon>201704302146248_revertedagain.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201705010228447_updowndeleted.resx">
-      <DependentUpon>201705010228447_updowndeleted.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\201704302155342_redownloaded.resx">
+      <DependentUpon>201704302155342_redownloaded.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
+
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
     <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>

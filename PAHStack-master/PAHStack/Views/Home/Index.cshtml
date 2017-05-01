@@ -14,6 +14,9 @@
 <br />
 <br />
 
+<div id="search-results">
+</div>
+
 @foreach (var item in Model)
 {
     <ul class="list-group">
@@ -22,7 +25,7 @@
                 <div class="row">
 
                     <div class="col-xs-1" id="counterbox">
-                        <div id="numofvotes">0</div> 
+                        <div id="numofvotes">0</div>
                         <div>votes</div>
                     </div>
                     <div class="col-xs-1" id="counterbox">
@@ -30,7 +33,7 @@
                         <div>answers</div>
                     </div>
                     <div class="col-xs-1" id="counterbox">
-                        <div id="numofvotes">0</div>
+                        <div id="numOfViews">@item.ViewCount</div>
                         <div>views</div>
                     </div>
 
@@ -38,7 +41,7 @@
                         <div>
                             <h3><a href="~/Post/Details/@item.Id">@item.Title</a></h3>
                             Asked @item.DatePosted.ToShortDateString() ago by @item.User.UserName
-                        </div> 
+                        </div>
                     </div>
                 </div>
             </div>

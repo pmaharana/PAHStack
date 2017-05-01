@@ -6,11 +6,16 @@ using System.Linq;
 using System.Web;
 using System.Web.Mvc;
 using System.Data.Entity;
+using PAHStack.ViewModels;
 
 namespace PAHStack.Controllers
 {
     public class HomeController : Controller
     {
+        private PostModel Post = new PostModel();
+        private AnswerModel Answer = new AnswerModel();
+        private ApplicationUser Uzer = new ApplicationUser();
+        
 
         public ActionResult Index()
         {
@@ -20,7 +25,7 @@ namespace PAHStack.Controllers
 
             //// get a users posts via the post table
             //var usersPosts = db.Posts.Where(w => w.UserId == User.Identity.GetUserId());
-            
+
             //// get all posts for a user by querying the user
             //var user = db.Users.First(f => User.Identity.GetUserId() == f.Id);
             //var userPosts = user.Posts;
@@ -32,12 +37,19 @@ namespace PAHStack.Controllers
             return View(posts);
         }
 
+        [Authorize(Roles = "admin")]
         public ActionResult About()
         {
-            ViewBag.Message = "Your application description page.";
+            var db = new ApplicationDbContext();
+            var posts = db.Posts.ToList();
+            var answers = db.Answers.ToList();
+            var users = db.Users.ToList();
+            var adminvm = new AdminViewModel(posts, answers, users);
 
-            return View();
+            return View(adminvm);
         }
+
+
 
         public ActionResult Contact()
         {
