@@ -34,15 +34,15 @@
                     <div class="row">
 
                         <div class="col-xs-1" id="counterbox">
-                            <div id="numofvotes">0</div>
+                            <div id="numofvotes">@item.Votes.Sum(s => s.PostVoteValue)</div>
                             <div>votes</div>
                         </div>
                         <div class="col-xs-1" id="counterbox">
-                            <div id="numofvotes">0</div>
+                            <div id="numofanswers">@item.Answers.Count()</div>
                             <div>answers</div>
                         </div>
                         <div class="col-xs-1" id="counterbox">
-                            <div id="numofvotes">0</div>
+                            <div id="numofviews">@item.ViewCount</div>
                             <div>views</div>
                         </div>
 
