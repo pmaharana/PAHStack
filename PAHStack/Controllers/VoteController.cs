@@ -1,6 +1,6 @@
 ﻿using Microsoft.AspNet.Identity;
 using PAHStack.Models;
-using PAHStack.ViewModel;
+using PAHStack.ViewModels;
 using System;
 using System.Collections.Generic;
 using System.Linq;

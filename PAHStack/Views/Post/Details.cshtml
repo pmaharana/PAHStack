@@ -22,7 +22,7 @@
     <div class="col-xs-1 text-center" id="stararrowbox"> @*Vote Buttons*@
       <div id="voteContainer-@Model.Posts.Id">
           <div id="voteContainer">
-              @Html.Partial("_PartialVoteDisplay", Model)
+              @Html.Partial("_PartialVoteDisplay", Model.Posts)
           </div>
       </div>
 
