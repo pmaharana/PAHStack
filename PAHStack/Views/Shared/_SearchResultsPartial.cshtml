@@ -1,0 +1,31 @@
+﻿@model PAHStack.Models.PostModel
+
+<ul class="list-group">
+    <li class="list-group-item">
+        <div class="container">
+            <div class="row">
+
+                <div class="col-xs-1" id="counterbox">
+                    <div id="numofvotes">@*@Model.Votes.Sum(s => s.PostVoteValue)*@</div>
+                    <div>votes</div>
+                </div>
+                <div class="col-xs-1" id="counterbox">
+                    <div id="numofanswers">@*@Model.Answers.Count()*@</div>
+                    <div>answers</div>
+                </div>
+                <div class="col-xs-1" id="counterbox">
+                    <div id="numofviews">@Model.ViewCount</div>
+                    <div>views</div>
+                </div>
+
+                <div class="col-xs-9">
+                    <div>
+                        <h3><a href="~/Post/Details/@Model.Id">@Model.Title</a></h3>
+                        Asked @Model.DatePosted.ToShortDateString() ago by Model.User.UserName
+                    </div>
+                </div>
+            </div>
+        </div>
+    </li>
+</ul>
+

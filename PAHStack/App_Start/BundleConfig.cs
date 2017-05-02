@@ -10,7 +10,7 @@ namespace PAHStack
         {
             bundles.Add(new ScriptBundle("~/bundles/jquery").Include(
                         "~/Scripts/jquery-{version}.js",
-                        "~/Scripts.Votes.js"
+                        "~/Scripts.Votes.js", "~/Scripts/Search.js"
                         ));
 
             bundles.Add(new ScriptBundle("~/bundles/jqueryval").Include(
