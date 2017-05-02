@@ -13,6 +13,7 @@ namespace PAHStack.Models
     {
         public IEnumerable<PostModel> Posts { get; set; }
         public IEnumerable<AnswerModel> Answers { get; set; }
+       
         //answers
         // postsvotes
         // answers votes
