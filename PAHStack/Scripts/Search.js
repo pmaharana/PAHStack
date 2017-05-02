@@ -10,7 +10,7 @@
         contentType: "application/json",
         dataType: "html",
         success: (results) => {
-            $("#resutls").html(results);
+            $("#results").html(results);
         }
     });
 }
