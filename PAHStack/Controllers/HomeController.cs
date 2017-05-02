@@ -57,5 +57,17 @@ namespace PAHStack.Controllers
 
             return View();
         }
+
+        [HttpPost]
+        public ActionResult Search(SearchParams param)
+        {
+            ApplicationDbContext db = new ApplicationDbContext();
+            var results = db.Posts
+                .Where(w => w.Body.Contains(param.Keyword) ||
+                w.Title.Contains(param.Keyword))
+                .ToList();
+            return PartialView("_SearchFormPartial", results);
+        }
     }
 }
+    
