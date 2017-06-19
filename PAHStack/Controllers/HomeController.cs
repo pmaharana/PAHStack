@@ -67,6 +67,7 @@ namespace PAHStack.Controllers
         {
             ApplicationDbContext db = new ApplicationDbContext();
             var results = db.Posts
+                .Include(i => i.User)
                 .Where(w => w.Body.Contains(param.Keyword) ||
                 w.Title.Contains(param.Keyword))
                 .ToList();
